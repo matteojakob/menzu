@@ -16,8 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Palanquin+Dark:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css?v=202610021226" />
+    <script src="js/main.js?v=202610021226" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -43,7 +43,7 @@
         <div class="container hero-inner">
           <div class="hero-text">
             <p class="eyebrow">Essen an der Passhöhe</p>
-            <h1>Pizzahüsli <span>Menzu</span></h1>
+            <h1><span class="h1-main">Menzu</span><span class="h1-sub">Pizzahüsli</span></h1>
             <p class="lead">
               Pizza, Burger und Snacks mit herrlicher Aussicht – mitten in der Natur auf dem Böhler.
             </p>
@@ -105,269 +105,269 @@
             <p>Bestellungen und Reservationen nehmen wir gerne telefonisch entgegen: <a href="tel:+41627230273">062 723 02 73</a></p>
           </div>
         </div>
-        <nav class="menu-nav" aria-label="Kategorien">
-          <div class="container menu-nav-inner">
-        <a href="#menu-pizza">Pizza</a>
-        <a href="#menu-burger">Burger</a>
-        <a href="#menu-sides">Snacks & Beilagen</a>
-        <a href="#menu-salad">Salate</a>
-        <a href="#menu-sauce">Saucen</a>
-        <a href="#menu-desserts">Desserts</a>
-        <a href="#menu-drinks">Getränke</a>
+        <div class="container">
+          <nav class="menu-nav" role="tablist" aria-label="Kategorien">
+            <a href="#menu-pizza" role="tab" aria-controls="menu-pizza">Pizza</a>
+            <a href="#menu-burger" role="tab" aria-controls="menu-burger">Burger</a>
+            <a href="#menu-sides" role="tab" aria-controls="menu-sides">Snacks & Beilagen</a>
+            <a href="#menu-salad" role="tab" aria-controls="menu-salad">Salate</a>
+            <a href="#menu-sauce" role="tab" aria-controls="menu-sauce">Saucen</a>
+            <a href="#menu-desserts" role="tab" aria-controls="menu-desserts">Desserts</a>
+            <a href="#menu-drinks" role="tab" aria-controls="menu-drinks">Getränke</a>
+          </nav>
+          <div class="menu-panels">
+          <section class="menu-cat" id="menu-pizza" role="tabpanel">
+            <div class="menu-cat-head"><h3>Pizza</h3><span class="sizes">M = Medium · L = Large</span></div>
+            <ul class="menu-list is-pizza">
+              <li>
+                <div class="row"><span class="name">Pizza Margherita</span><span class="dots"></span><span class="price"><small>M</small>10.–</span><span class="price"><small>L</small>15.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Basilikum</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Salami</span><span class="dots"></span><span class="price"><small>M</small>14.–</span><span class="price"><small>L</small>17.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Salami</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Napoli</span><span class="dots"></span><span class="price"><small>M</small>14.–</span><span class="price"><small>L</small>17.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Sardellen, Kapern, Oliven</p>
+                <p class="allergens">Gluten, Milch, Fisch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Prosciutto</span><span class="dots"></span><span class="price"><small>M</small>15.–</span><span class="price"><small>L</small>18.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Kochschinken</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Tonno</span><span class="dots"></span><span class="price"><small>M</small>15.–</span><span class="price"><small>L</small>18.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Thunfisch, Zwiebeln</p>
+                <p class="allergens">Gluten, Milch, Fisch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Hawaii</span><span class="dots"></span><span class="price"><small>M</small>15.–</span><span class="price"><small>L</small>18.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Ananas</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Verdura</span><span class="dots"></span><span class="price"><small>M</small>14.–</span><span class="price"><small>L</small>17.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Paprika, Zucchini, Aubergine, Champignons</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Quattro Stagione</span><span class="dots"></span><span class="price"><small>M</small>15.–</span><span class="price"><small>L</small>18.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Salami, Champignons, Artischocken</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Cardinale</span><span class="dots"></span><span class="price"><small>M</small>15.–</span><span class="price"><small>L</small>18.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Champignons</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Romantica</span><span class="dots"></span><span class="price"><small>M</small>17.–</span><span class="price"><small>L</small>19.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Rucola, Parmesanspäne, Cherry-Tomaten</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pizza Patrone</span><span class="dots"></span><span class="price"><small>M</small>17.–</span><span class="price"><small>L</small>20.–</span></div>
+                <p class="desc">Tomatensauce, Mozzarella, Salami, Peperoni, Zwiebeln, Knoblauch</p>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+            </ul>
+            <p class="menu-note">Extra Beläge nach Wunsch ab CHF 1.–</p>
+          </section>
+          <section class="menu-cat" id="menu-burger" role="tabpanel">
+            <div class="menu-cat-head"><h3>Burger</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Creamy Hamburger</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Rindfleisch 80g (Schweiz), Rucola, Gorgonzola, Röstzwiebeln oder Zwiebel, Preiselbeersauce oder Cocktail</p>
+                <p class="allergens">Gluten, Milch, Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Patrone Hamburger</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Rindfleisch 80g (Schweiz), Zwiebeln, Gurken, Cheddar-Käse, Mayo</p>
+                <p class="allergens">Gluten, Milch, Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Zwiebel King</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Rindfleisch 80g (Schweiz), Zwiebelringe, BBQ-Sauce, Cheddar-Käse</p>
+                <p class="allergens">Gluten, Milch, Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Camembert Burger (vegetarisch)</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Camembert, Rucola, Preiselbeeren oder Cocktail</p>
+                <p class="allergens">Gluten, Milch, Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken Burger</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Chickennuggets (Schweiz), Rucola oder Eisberg, Mayo, Curry-Ketchup</p>
+                <p class="allergens">Gluten, Milch, Ei</p>
+              </li>
+            </ul>
+          </section>
+          <section class="menu-cat" id="menu-sides" role="tabpanel">
+            <div class="menu-cat-head"><h3>Snacks & Beilagen</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Pommes Bowl Jalapenos</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Pommes, Jalapenos, Cheddar-Sauce</p>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pommes Bowl BBQ Bacon</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Pommes, Speck, Röstzwiebeln, BBQ Sauce</p>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pommes Bowl Guacamole</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Pommes, Cocktail, Guacamole, Tomaten, Rucola oder Eisbergsalat oder Nüsslisalat</p>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mozzarella Sticks (7)</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Onion Rings (7)</span><span class="dots"></span><span class="price">9.–</span></div>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Camembert Beeren (7)</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="allergens">Gluten, Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken Wings (7)</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Beilage Pommes</span><span class="dots"></span><span class="price">8.–</span></div>
+                <p class="allergens">Gluten</p>
+              </li>
+            </ul>
+          </section>
+          <section class="menu-cat" id="menu-salad" role="tabpanel">
+            <div class="menu-cat-head"><h3>Salate</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Chabis-Rübli Salat mit eigener Sauce</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="allergens">Senf</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Grüner Salat</span><span class="dots"></span><span class="price">10.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Thonsalat</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="allergens">Fisch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Gemischter Salat</span><span class="dots"></span><span class="price">10.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mozzarella-Tomaten Salat</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="allergens">Milch</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Pastasalat</span><span class="dots"></span><span class="price">10.–</span></div>
+                <p class="desc">Nudeln, Gemüse, hausgemachtes Dressing</p>
+                <p class="allergens">Gluten, Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Südfleischsalat</span><span class="dots"></span><span class="price">12.–</span></div>
+                <p class="desc">Schweizer Fleisch</p>
+              </li>
+            </ul>
+          </section>
+          <section class="menu-cat" id="menu-sauce" role="tabpanel">
+            <div class="menu-cat-head"><h3>Saucen</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Korean BBQ Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
+                <p class="allergens">Soja, Sesam</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Guacamole Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Ketchup</span><span class="dots"></span><span class="price">3.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Cocktail Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
+                <p class="allergens">Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mayo</span><span class="dots"></span><span class="price">3.–</span></div>
+                <p class="allergens">Ei</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Knoblauch Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
+                <p class="allergens">Ei, Milch</p>
+              </li>
+            </ul>
+          </section>
+          <section class="menu-cat" id="menu-desserts" role="tabpanel">
+            <div class="menu-cat-head"><h3>Desserts</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Extreme</span><span class="dots"></span><span class="price">3.50</span></div>
+                <p class="allergens">Milch, Ei, Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mega Almond</span><span class="dots"></span><span class="price">3.50</span></div>
+                <p class="allergens">Milch, Ei, Gluten, Nüsse</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Ben &amp; Jerry's diverse Sorten</span><span class="dots"></span><span class="price">5.–</span></div>
+                <p class="allergens">Milch, Ei, Gluten, Nüsse</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Tiramisu</span><span class="dots"></span><span class="price">6.–</span></div>
+                <p class="allergens">Milch, Ei, Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Schoggimousse</span><span class="dots"></span><span class="price">6.–</span></div>
+                <p class="allergens">Milch, Ei</p>
+              </li>
+            </ul>
+          </section>
+          <section class="menu-cat" id="menu-drinks" role="tabpanel">
+            <div class="menu-cat-head"><h3>Getränke</h3></div>
+            <ul class="menu-list">
+              <li>
+                <div class="row"><span class="name">Cola 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Cola 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Ice Tea 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Ice Tea 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Red Bull 0.25L</span><span class="dots"></span><span class="price">5.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mineralwasser mit Kohlensäure 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Mineralwasser ohne Kohlensäure 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Bier Feldschlösschen 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+                <p class="allergens">Gluten</p>
+              </li>
+              <li>
+                <div class="row"><span class="name">Fanta 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Fanta 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
+              </li>
+            </ul>
+          </section>
           </div>
-        </nav>
-        <div class="container menu-grid">
-      <section class="menu-cat" id="menu-pizza">
-        <div class="menu-cat-head"><h3>Pizza</h3><span class="sizes"><span>Medium</span><span>Large</span></span></div>
-        <ul class="menu-list is-pizza">
-          <li>
-            <div class="row"><span class="name">Pizza Margherita</span><span class="dots"></span><span class="price">10.–</span><span class="price">15.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Basilikum</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Salami</span><span class="dots"></span><span class="price">14.–</span><span class="price">17.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Salami</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Napoli</span><span class="dots"></span><span class="price">14.–</span><span class="price">17.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Sardellen, Kapern, Oliven</p>
-            <p class="allergens">Allergene: Gluten, Milch, Fisch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Prosciutto</span><span class="dots"></span><span class="price">15.–</span><span class="price">18.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Kochschinken</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Tonno</span><span class="dots"></span><span class="price">15.–</span><span class="price">18.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Thunfisch, Zwiebeln</p>
-            <p class="allergens">Allergene: Gluten, Milch, Fisch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Hawaii</span><span class="dots"></span><span class="price">15.–</span><span class="price">18.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Ananas</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Verdura</span><span class="dots"></span><span class="price">14.–</span><span class="price">17.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Paprika, Zucchini, Aubergine, Champignons</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Quattro Stagione</span><span class="dots"></span><span class="price">15.–</span><span class="price">18.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Salami, Champignons, Artischocken</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Cardinale</span><span class="dots"></span><span class="price">15.–</span><span class="price">18.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Kochschinken, Champignons</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Romantica</span><span class="dots"></span><span class="price">17.–</span><span class="price">19.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Rucola, Parmesanspäne, Cherry-Tomaten</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pizza Patrone</span><span class="dots"></span><span class="price">17.–</span><span class="price">20.–</span></div>
-            <p class="desc">Tomatensauce, Mozzarella, Salami, Peperoni, Zwiebeln, Knoblauch</p>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-        </ul>
-        <p class="menu-note">Extra Beläge nach Wunsch ab CHF 1.–</p>
-      </section>
-      <section class="menu-cat" id="menu-burger">
-        <div class="menu-cat-head"><h3>Burger</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Creamy Hamburger</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Rindfleisch 80g (Schweiz), Rucola, Gorgonzola, Röstzwiebeln oder Zwiebel, Preiselbeersauce oder Cocktail</p>
-            <p class="allergens">Allergene: Gluten, Milch, Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Patrone Hamburger</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Rindfleisch 80g (Schweiz), Zwiebeln, Gurken, Cheddar-Käse, Mayo</p>
-            <p class="allergens">Allergene: Gluten, Milch, Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Zwiebel King</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Rindfleisch 80g (Schweiz), Zwiebelringe, BBQ-Sauce, Cheddar-Käse</p>
-            <p class="allergens">Allergene: Gluten, Milch, Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Camembert Burger (vegetarisch)</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Camembert, Rucola, Preiselbeeren oder Cocktail</p>
-            <p class="allergens">Allergene: Gluten, Milch, Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Chicken Burger</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Chickennuggets (Schweiz), Rucola oder Eisberg, Mayo, Curry-Ketchup</p>
-            <p class="allergens">Allergene: Gluten, Milch, Ei</p>
-          </li>
-        </ul>
-      </section>
-      <section class="menu-cat" id="menu-sides">
-        <div class="menu-cat-head"><h3>Snacks & Beilagen</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Pommes Bowl Jalapenos</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Pommes, Jalapenos, Cheddar-Sauce</p>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pommes Bowl BBQ Bacon</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Pommes, Speck, Röstzwiebeln, BBQ Sauce</p>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pommes Bowl Guacamole</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Pommes, Cocktail, Guacamole, Tomaten, Rucola oder Eisbergsalat oder Nüsslisalat</p>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mozzarella Sticks (7)</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Onion Rings (7)</span><span class="dots"></span><span class="price">9.–</span></div>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Camembert Beeren (7)</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="allergens">Allergene: Gluten, Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Chicken Wings (7)</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Beilage Pommes</span><span class="dots"></span><span class="price">8.–</span></div>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-        </ul>
-      </section>
-      <section class="menu-cat" id="menu-salad">
-        <div class="menu-cat-head"><h3>Salate</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Chabis-Rübli Salat mit eigener Sauce</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="allergens">Allergene: Senf</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Grüner Salat</span><span class="dots"></span><span class="price">10.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Thonsalat</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="allergens">Allergene: Fisch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Gemischter Salat</span><span class="dots"></span><span class="price">10.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mozzarella-Tomaten Salat</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="allergens">Allergene: Milch</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Pastasalat</span><span class="dots"></span><span class="price">10.–</span></div>
-            <p class="desc">Nudeln, Gemüse, hausgemachtes Dressing</p>
-            <p class="allergens">Allergene: Gluten, Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Südfleischsalat</span><span class="dots"></span><span class="price">12.–</span></div>
-            <p class="desc">Schweizer Fleisch</p>
-          </li>
-        </ul>
-      </section>
-      <section class="menu-cat" id="menu-sauce">
-        <div class="menu-cat-head"><h3>Saucen</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Korean BBQ Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
-            <p class="allergens">Allergene: Soja, Sesam</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Guacamole Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Ketchup</span><span class="dots"></span><span class="price">3.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Cocktail Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
-            <p class="allergens">Allergene: Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mayo</span><span class="dots"></span><span class="price">3.–</span></div>
-            <p class="allergens">Allergene: Ei</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Knoblauch Sauce</span><span class="dots"></span><span class="price">3.–</span></div>
-            <p class="allergens">Allergene: Ei, Milch</p>
-          </li>
-        </ul>
-      </section>
-      <section class="menu-cat" id="menu-desserts">
-        <div class="menu-cat-head"><h3>Desserts</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Extreme</span><span class="dots"></span><span class="price">3.50</span></div>
-            <p class="allergens">Allergene: Milch, Ei, Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mega Almond</span><span class="dots"></span><span class="price">3.50</span></div>
-            <p class="allergens">Allergene: Milch, Ei, Gluten, Nüsse</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Ben &amp; Jerry's diverse Sorten</span><span class="dots"></span><span class="price">5.–</span></div>
-            <p class="allergens">Allergene: Milch, Ei, Gluten, Nüsse</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Tiramisu</span><span class="dots"></span><span class="price">6.–</span></div>
-            <p class="allergens">Allergene: Milch, Ei, Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Schoggimousse</span><span class="dots"></span><span class="price">6.–</span></div>
-            <p class="allergens">Allergene: Milch, Ei</p>
-          </li>
-        </ul>
-      </section>
-      <section class="menu-cat" id="menu-drinks">
-        <div class="menu-cat-head"><h3>Getränke</h3></div>
-        <ul class="menu-list">
-          <li>
-            <div class="row"><span class="name">Cola 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Cola 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Ice Tea 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Ice Tea 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Red Bull 0.25L</span><span class="dots"></span><span class="price">5.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mineralwasser mit Kohlensäure 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Mineralwasser ohne Kohlensäure 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Bier Feldschlösschen 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-            <p class="allergens">Allergene: Gluten</p>
-          </li>
-          <li>
-            <div class="row"><span class="name">Fanta 0.5L</span><span class="dots"></span><span class="price">4.–</span></div>
-          </li>
-          <li>
-            <div class="row"><span class="name">Fanta 0.33L</span><span class="dots"></span><span class="price">3.–</span></div>
-          </li>
-        </ul>
-      </section>
         </div>
         <p class="container menu-footnote">Alle Preise in CHF inkl. MwSt. Rindfleisch und Chicken aus der Schweiz.</p>
       </section>

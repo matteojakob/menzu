@@ -1,12 +1,17 @@
 :root {
-  --orange: #e73d0c;
-  --orange-dark: #c4320a;
-  --ink: #1f1b18;
-  --muted: #6b625b;
-  --cream: #faf6f1;
-  --sand: #f1e9df;
-  --dark: #1c1917;
-  --line: #e4d9cc;
+  /* Colours taken from the logo: maroon letters, dark outline, amber flame */
+  --orange: #d9561a;
+  --orange-dark: #b8461a;
+  --flame: linear-gradient(135deg, #f0a54a 0%, #e0651f 55%, #d24a16 100%);
+  --amber: #f0b062;
+  --brown: #844442;
+  --brown-dark: #5c2b29;
+  --ink: #2b1b18;
+  --muted: #74615a;
+  --cream: #fbf5ec;
+  --sand: #f3e6d4;
+  --dark: #2a1714;
+  --line: #eadccb;
   --radius: 18px;
   --shadow: 0 10px 30px rgba(31, 27, 24, 0.08);
   --header-h: 76px;
@@ -22,7 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 64px);
+  scroll-padding-top: calc(var(--header-h) + 16px);
 }
 
 body {
@@ -43,6 +48,10 @@ img {
 
 a {
   color: inherit;
+}
+
+a[href^="tel:"] {
+  white-space: nowrap;
 }
 
 h1,
@@ -66,7 +75,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--orange-dark);
 }
 
 /* Buttons */
@@ -76,9 +85,9 @@ h3 {
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
-  border: 2px solid var(--orange);
+  border: 2px solid transparent;
   border-radius: 999px;
-  background: var(--orange);
+  background: var(--flame) border-box;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -86,9 +95,8 @@ h3 {
 }
 
 .btn:hover {
-  background: var(--orange-dark);
-  border-color: var(--orange-dark);
   transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(224, 101, 31, 0.35);
 }
 
 .btn-ghost {
@@ -144,7 +152,7 @@ h3 {
 }
 
 .site-nav a:not(.btn):hover {
-  color: var(--orange);
+  color: var(--brown);
 }
 
 .nav-toggle {
@@ -180,6 +188,7 @@ h3 {
 .hero {
   padding: 64px 0 88px;
   overflow-x: clip;
+  background: radial-gradient(ellipse at 85% 20%, rgba(240, 176, 98, 0.22), transparent 55%);
 }
 
 .hero-inner {
@@ -190,14 +199,30 @@ h3 {
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
   text-transform: uppercase;
-  letter-spacing: -0.01em;
 }
 
-.hero h1 span {
+/* Mirrors the logo: big maroon MENZU with a dark offset, PIZZAHÜSLI spaced out below */
+.h1-main {
   display: block;
-  color: var(--orange);
+  font-size: clamp(4.2rem, 11vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #a0544f 0%, var(--brown) 50%, var(--brown-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+}
+
+.h1-sub {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2.4vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  color: var(--ink);
 }
 
 .lead {
@@ -229,7 +254,7 @@ h3 {
 .hero-facts svg {
   width: 20px;
   height: 20px;
-  fill: var(--orange);
+  fill: var(--brown);
   flex-shrink: 0;
 }
 
@@ -244,13 +269,14 @@ h3 {
   position: relative;
 }
 
+/* Flame glow behind the photo */
 .hero-image::before {
   content: "";
   position: absolute;
-  inset: 24px -24px -24px 24px;
-  border-radius: 32px;
-  background: var(--orange);
-  opacity: 0.12;
+  inset: -8% -10% -12% -6%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(240, 165, 74, 0.55), rgba(224, 101, 31, 0.18) 60%, transparent);
+  filter: blur(8px);
 }
 
 .hero-image img {
@@ -266,7 +292,7 @@ h3 {
 .quote-band {
   position: relative;
   padding: 120px 0;
-  background: linear-gradient(rgba(20, 16, 14, 0.62), rgba(20, 16, 14, 0.62)),
+  background: linear-gradient(rgba(42, 23, 20, 0.68), rgba(42, 23, 20, 0.68)),
     url("../images/jhjhjh-min.jpg") center / cover;
   color: #fff;
   text-align: center;
@@ -287,7 +313,7 @@ h3 {
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
-  color: #ffb79c;
+  color: var(--amber);
 }
 
 /* Services */
@@ -315,7 +341,7 @@ h3 {
   height: 36px;
   margin-bottom: 14px;
   fill: none;
-  stroke: var(--orange);
+  stroke: var(--brown);
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -350,63 +376,49 @@ h3 {
 }
 
 .section-head a {
-  color: var(--orange);
+  color: var(--brown);
   font-weight: 700;
   text-decoration: none;
 }
 
 .menu-nav {
-  position: sticky;
-  top: var(--header-h);
-  z-index: 40;
-  background: var(--cream);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 40px;
-}
-
-.menu-nav-inner {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.menu-nav-inner::-webkit-scrollbar {
-  display: none;
+  margin-bottom: 24px;
 }
 
 .menu-nav a {
-  flex-shrink: 0;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: #fff;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .menu-nav a:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  border-color: var(--brown);
+}
+
+.menu-nav a[aria-selected="true"] {
+  background: var(--flame) border-box;
+  border-color: transparent;
   color: #fff;
 }
 
-.menu-grid {
-  columns: 2;
-  column-gap: 32px;
-}
-
 .menu-cat {
-  break-inside: avoid;
-  margin-bottom: 32px;
-  padding: 32px;
+  margin-bottom: 24px;
+  padding: 28px 32px;
   background: #fff;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+.has-tabs .menu-cat {
+  margin-bottom: 0;
 }
 
 .menu-cat-head {
@@ -414,9 +426,10 @@ h3 {
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 14px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid var(--orange);
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  border-image: var(--flame) 1;
 }
 
 .menu-cat-head h3 {
@@ -424,7 +437,6 @@ h3 {
 }
 
 .sizes {
-  display: flex;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -432,25 +444,18 @@ h3 {
   color: var(--muted);
 }
 
-.sizes span,
-.is-pizza .price {
-  width: 64px;
-  text-align: right;
-}
-
 .menu-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .menu-list li {
-  padding: 14px 0;
+  padding: 12px 0;
   border-bottom: 1px dashed var(--line);
-}
-
-.menu-list li:last-child {
-  border-bottom: 0;
 }
 
 .row {
@@ -472,24 +477,34 @@ h3 {
 
 .price {
   font-weight: 700;
-  color: var(--orange);
+  color: var(--brown);
   white-space: nowrap;
 }
 
-.is-pizza .price {
-  flex-shrink: 0;
+.price small {
+  margin-right: 3px;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.is-pizza .price + .price {
+  margin-left: 6px;
 }
 
 .desc {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
+  margin: 2px 0 0;
+  font-size: 0.88rem;
   color: var(--muted);
 }
 
 .allergens {
-  margin: 2px 0 0;
-  font-size: 0.75rem;
-  color: #a1968c;
+  margin: 1px 0 0;
+  font-size: 0.72rem;
+  color: #9a8a80;
+}
+
+.allergens::before {
+  content: "Allergene: ";
 }
 
 .menu-note {
@@ -529,13 +544,17 @@ h3 {
   border-radius: 28px;
 }
 
+.party .eyebrow {
+  color: var(--amber);
+}
+
 .party h2 {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .party p:not(.eyebrow) {
   margin: 18px 0 30px;
-  color: #d6cdc5;
+  color: #e6d6cc;
   font-size: 1.05rem;
 }
 
@@ -598,7 +617,7 @@ h3 {
 }
 
 .contact a:hover {
-  color: var(--orange);
+  color: var(--brown);
 }
 
 .payments {
@@ -663,7 +682,7 @@ h3 {
 }
 
 .socials a:hover {
-  background: var(--orange);
+  background: var(--flame);
 }
 
 .socials svg {
@@ -696,8 +715,8 @@ h3 {
   .map {
     grid-column: 1 / -1;
   }
-  .menu-grid {
-    columns: 1;
+  .menu-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -752,12 +771,26 @@ h3 {
     gap: 40px;
   }
 
-  .hero-image::before {
-    inset: 16px -12px -12px 16px;
-  }
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+    padding: 18px 20px;
+  }
+
+  .service svg {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .service p {
+    margin: 0;
   }
 }
 
@@ -775,9 +808,21 @@ h3 {
     padding: 22px;
   }
 
-  .sizes span,
-  .is-pizza .price {
-    width: 52px;
+  .menu-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 4px;
+    scrollbar-width: none;
+  }
+
+  .menu-nav a {
+    flex-shrink: 0;
+  }
+
+  .menu-cat-head {
+    flex-wrap: wrap;
   }
 
   .quote-band {
