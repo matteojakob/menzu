@@ -144,6 +144,10 @@ h3 {
   gap: 28px;
 }
 
+.nav-phone {
+  color: var(--brown);
+}
+
 .site-nav a:not(.btn) {
   font-weight: 600;
   font-size: 0.95rem;
@@ -281,6 +285,7 @@ h3 {
 
 .hero-image img {
   position: relative;
+  filter: brightness(0.88) contrast(1.05) saturate(1.05);
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
@@ -354,6 +359,11 @@ h3 {
 .service p {
   margin: 6px 0 0;
   color: var(--muted);
+}
+
+.service a {
+  color: var(--brown);
+  font-weight: 700;
 }
 
 /* Menu */
@@ -497,16 +507,6 @@ h3 {
   color: var(--muted);
 }
 
-.allergens {
-  margin: 1px 0 0;
-  font-size: 0.72rem;
-  color: #9a8a80;
-}
-
-.allergens::before {
-  content: "Allergene: ";
-}
-
 .menu-note {
   margin: 12px 0 0;
   font-size: 0.9rem;
@@ -514,9 +514,18 @@ h3 {
 }
 
 .menu-footnote {
-  margin-top: 8px;
-  font-size: 0.85rem;
+  margin-top: 12px;
+  font-size: 0.82rem;
   color: var(--muted);
+}
+
+.menu-footnote p {
+  margin: 0 0 4px;
+}
+
+.menu-footnote a {
+  color: var(--brown);
+  font-weight: 600;
 }
 
 /* Party service */
@@ -592,6 +601,10 @@ h3 {
 .hours dd {
   margin: 2px 0 18px;
   color: var(--muted);
+}
+
+.card .btn {
+  margin-top: 4px;
 }
 
 .contact {
@@ -720,15 +733,7 @@ h3 {
   }
 }
 
-@media (max-width: 820px) {
-  :root {
-    --header-h: 64px;
-  }
-
-  .logo img {
-    height: 42px;
-  }
-
+@media (max-width: 1080px) {
   .nav-toggle {
     display: block;
   }
@@ -752,13 +757,24 @@ h3 {
     display: flex;
   }
 
-  .site-nav a:not(.btn) {
+  .site-nav a:not(.btn),
+  .nav-phone {
     padding: 14px 0;
     border-bottom: 1px solid var(--line);
   }
 
   .site-nav .btn {
     margin-top: 16px;
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .logo img {
+    height: 42px;
   }
 
   .hero {
