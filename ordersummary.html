@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menzu - Bestellübersicht</title>
+    <link rel="stylesheet" href="css/ordersummary.css" />
+    <link rel="stylesheet" href="css/nicepage.css" />
+    <link rel="stylesheet" href="Menzu-Pizzahüsli.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Palanquin+Dark:400,500,600,700"
+    />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+    />
+    <script src="js/OrderActions.js"></script>
+    <script src="js/OrderItems.js"></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="js/jquery.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="js/nicepage.js"
+      defer=""
+    ></script>
+  </head>
+  <body
+    data-home-page="Menzu-Pizzahüsli.html"
+    data-home-page-title="Menzu Pizzahüsli"
+    data-path-to-root="./"
+    data-include-products="false"
+    class="u-body u-xl-mode"
+    data-lang="de"
+  >
+    <section
+      class="u-align-center u-clearfix u-section-11"
+      id="sectionOrdersSum"
+    >
+      <h1 style="font-size: 2rem">Bestellübersicht</h1>
+      <div class="SummaryOfOrder">
+        <div id="order-summary">
+          <ul id="basket-items">
+            <!-- Basket items will be listed here -->
+          </ul>
+        </div>
+        <div id="drink-selection">
+          <label for="drink">Wähle ein Getränk:</label>
+          <select
+            id="drink"
+            name="drink"
+            style="margin-top: 10px; padding: 5px; max-width: 60vw"
+            onchange="updateTotalCost()"
+          >
+            <option value="cola-33" data-price="3.0">
+              Coca Cola 3,3 dl (CHF 3.0)
+            </option>
+            <option value="cola-50" data-price="3.5">
+              Coca Cola 5 dl (CHF 3.5)
+            </option>
+            <option value="cola-150" data-price="5.0">
+              Coca Cola 1,5 l (CHF 5.0)
+            </option>
+            <option value="colaz-33" data-price="3.0">
+              Coca Cola Zero 3,3 dl (CHF 3.0)
+            </option>
+            <option value="colaz-50" data-price="3.5">
+              Coca Cola Zero 5 dl (CHF 3.5)
+            </option>
+            <option value="colaz-150" data-price="5.0">
+              Coca Cola Zero 1,5 l (CHF 5.0)
+            </option>
+            <option value="fanta-33" data-price="3.0">
+              Fanta 3,3 dl (CHF 3.0)
+            </option>
+            <option value="fanta-50" data-price="3.5">
+              Fanta 5 dl (CHF 3.5)
+            </option>
+            <option value="fanta-150" data-price="5.0">
+              Fanta 1,5 l (CHF 5.0)
+            </option>
+            <option value="fuzetea-33" data-price="3.0">
+              Fuzetea (peach, lemon) 3,3 dl (CHF 3.0)
+            </option>
+            <option value="fuzetea-50" data-price="3.5">
+              Fuzetea (peach, lemon) 5 dl (CHF 3.5)
+            </option>
+            <option value="fuzetea-150" data-price="5.0">
+              Fuzetea (peach, lemon) 1,5 l (CHF 5.0)
+            </option>
+            <option value="rivella-33" data-price="3.0">
+              Rivella (rot, blau) 3,3 dl (CHF 3.0)
+            </option>
+            <option value="rivella-50" data-price="3.5">
+              Rivella (rot, blau) 5 dl (CHF 3.5)
+            </option>
+            <option value="rivella-150" data-price="5.0">
+              Rivella (rot, blau) 1,5 l (CHF 5.0)
+            </option>
+            <option value="uludag-33" data-price="3.5">
+              Uludag 3,3 dl (CHF 3.5)
+            </option>
+            <option value="uludag-50" data-price="4.0">
+              Uludag 5 dl (CHF 4.0)
+            </option>
+            <option value="uludag-150" data-price="5.0">
+              Uludag 1,5 l (CHF 5.0)
+            </option>
+            <option value="ayran" data-price="3.0">Ayran (CHF 3.0)</option>
+            <option value="redbull-25" data-price="4.0">
+              Red Bull (2,5 dl) (CHF 4.0)
+            </option>
+            <option value="feldschloesschen" data-price="4.0">
+              Feldschlösschen (CHF 4.0)
+            </option>
+            <option value="keines" data-price="0">keines</option>
+          </select>
+        </div>
+        <div id="cost-summary">
+          <p>
+            Totale Kosten exkl. Lieferung: <br /><span id="total-cost"></span>
+          </p>
+        </div>
+      </div>
+      <form
+        id="customer-details-form"
+        style="max-width: 400px; margin: auto; font-family: Arial, sans-serif"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Vorname und Nachname"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+
+        <div style="margin: 10px 0">
+          <label>
+            <input
+              type="radio"
+              name="orderType"
+              value="pickup"
+              onclick="toggleAddress(false)"
+              required
+            />
+            Abholung
+          </label>
+          <label style="margin-left: 15px">
+            <input
+              type="radio"
+              name="orderType"
+              checked=""
+              value="delivery"
+              onclick="toggleAddress(true)"
+              required
+            />
+            Lieferung
+          </label>
+        </div>
+
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Adresse (Beispieladresse 1, 5620 Beispielort)"
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+          "
+        />
+
+        <input
+          type="email"
+          id="contact"
+          name="contact"
+          placeholder="Email"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Nachricht zum Chef (z.B. zur Zubereitung oder Allergien)"
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        ></textarea>
+
+        <button
+          type="button"
+          onclick="submitOrderDetails()"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #e73d0c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Bestellung absenden
+        </button>
+      </form>
+      <p>
+        Sie werden nach absendung der Bestellung eine E-Mail erhalten mit den
+        Details. Warten Sie bitte auf eine weitere E-Mail mit der
+        Bestellbestätigung. Es kann bis zu einer Stunde dauern. Bevorzugen Sie
+        einen Anruf? 062 723 02 73
+      </p>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const basketItemsContainer = document.getElementById("basket-items");
+
+          const drinkDropdown = document.getElementById("drink");
+          const defaultDrinkOption =
+            drinkDropdown.options[drinkDropdown.selectedIndex];
+          const defaultDrinkName = defaultDrinkOption.text.split(" (")[0];
+          const defaultDrinkPrice = parseFloat(
+            defaultDrinkOption.dataset.price
+          );
+
+          // Set default drink in order
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+          order["drink"] = {
+            name: defaultDrinkName,
+            price: defaultDrinkPrice,
+            quantity: 1,
+          };
+          localStorage.setItem("order", JSON.stringify(order));
+          updateTotalCost();
+
+          renderOrderSummary();
+        });
+        function updateOrder(itemName, price, quantity = 1) {
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+
+          // Ensure itemName is included in the order
+          if (order[itemName]) {
+            order[itemName].quantity += quantity;
+          } else {
+            order[itemName] = {
+              name: itemName,
+              price: price,
+              quantity: quantity,
+            };
+          }
+
+          localStorage.setItem("order", JSON.stringify(order));
+          renderOrderSummary();
+          updateTotalCost();
+        }
+        console.log(JSON.parse(localStorage.getItem("order")));
+
+        function renderOrderSummary() {
+          const basketItemsContainer = document.getElementById("basket-items");
+          basketItemsContainer.innerHTML = ""; // Clear existing items
+
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+          for (let key in order) {
+            const item = order[key];
+            const itemName = key === "drink" ? item.name : key; // Use item.name for drink
+            const listItem = document.createElement("li");
+            listItem.classList.add("basket-item");
+            listItem.textContent = `${itemName} x${item.quantity} - CHF ${(
+              item.price * item.quantity
+            ).toFixed(2)}`;
+            basketItemsContainer.appendChild(listItem);
+          }
+        }
+
+        // Function to toggle the visibility of the address input field
+        function toggleAddress(show) {
+          const addressField = document.getElementById("address");
+          if (show) {
+            addressField.style.display = "block"; // Show the address field for delivery
+            addressField.setAttribute("required", "required"); // Make it a required field
+          } else {
+            addressField.style.display = "none"; // Hide the address field for pickup
+            addressField.removeAttribute("required"); // Remove the required attribute
+            addressField.value = ""; // Clear the address field
+          }
+        }
+
+        function updateTotalCost() {
+          const totalCostElement = document.getElementById("total-cost");
+          let totalCost = 0.0;
+
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+          for (let key in order) {
+            totalCost += order[key].price * order[key].quantity;
+          }
+
+          totalCostElement.textContent = `CHF ${totalCost.toFixed(2)}`;
+          localStorage.setItem("totalCost", totalCost.toFixed(2));
+        }
+
+        document.getElementById("drink").addEventListener("change", (e) => {
+          const selectedOption = e.target.options[e.target.selectedIndex];
+          const drinkName = selectedOption.text.split(" (")[0];
+          const drinkPrice = parseFloat(selectedOption.dataset.price);
+
+          // Update drink in order
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+          order["drink"] = {
+            name: drinkName,
+            price: drinkPrice,
+            quantity: 1,
+          };
+          localStorage.setItem("order", JSON.stringify(order));
+          renderOrderSummary();
+          updateTotalCost();
+        });
+
+        function submitOrderDetails() {
+          updateTotalCost();
+          const name = document.getElementById("name").value.trim();
+          const orderType = document.querySelector(
+            'input[name="orderType"]:checked'
+          ).value;
+          const address = document.getElementById("address").value.trim();
+          const contact = document.getElementById("contact").value.trim();
+
+          if (!name || (orderType === "delivery" && !address) || !contact) {
+            alert("Bitte alle erforderlichen Felder ausfüllen.");
+            return;
+          }
+
+          const message = document.getElementById("message").value.trim();
+
+          const order = JSON.parse(localStorage.getItem("order")) || {};
+          const totalCost = parseFloat(localStorage.getItem("totalCost"));
+
+          const formData = new FormData();
+          formData.append("name", name);
+          formData.append("orderType", orderType);
+          formData.append("address", address || "Keine Adresse (Abholung)");
+          formData.append("contact", contact);
+          formData.append("order", JSON.stringify(order));
+          formData.append("totalCost", totalCost.toFixed(2));
+          formData.append("message", message);
+
+          fetch("send_order.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                window.location.href = "confirmation.html?status=success";
+              } else {
+                window.location.href = "confirmation.html?status=failure";
+              }
+            })
+            .catch(() => {
+              window.location.href = "confirmation.html?status=failure";
+            });
+        }
+      </script>
+    </section>
+    <footer
+      class="u-align-center u-clearfix u-footer u-grey-90 u-footer"
+      id="sec-75cc"
+    >
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+          Website created by Matteo Jakob<br />contact@matteojakob.com
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

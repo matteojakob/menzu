@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bestellbestätigung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .confirmation-container {
+        text-align: center;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .success {
+        color: green;
+      }
+      .failure {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="confirmation-container">
+      <h1 id="confirmation-message"></h1>
+      <p style="margin: 50px">
+        Prüfen Sie Ihr E-Mail Postfach, als auch der Junk Ordner. Demnächst
+        erhalten Sie die Bestätigung. Dies kann einige Minuten dauern.
+      </p>
+      <a href="/" class="modern-link">Zurück zur Hauptseite</a>
+    </div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get("status");
+      const messageElement = document.getElementById("confirmation-message");
+
+      if (status === "success") {
+        messageElement.textContent = "Bestellung erfolgreich gesendet!";
+        messageElement.classList.add("success");
+      } else {
+        messageElement.textContent = "Fehler beim Senden der Bestellung.";
+        messageElement.classList.add("failure");
+      }
+    </script>
+  </body>
+  <style>
+    .modern-link {
+      color: #ff7f50; /* Orange color for the text */
+      text-decoration: none;
+      font-weight: bold;
+      padding: 16px 16px;
+      border: 2px solid #ff7f50;
+      border-radius: 5px;
+    }
+
+    .modern-link:hover {
+      background-color: #ff7f50; /* Orange background on hover */
+      color: white; /* White text on hover */
+      box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
+    }
+
+    .modern-link:active {
+      transform: scale(0.98); /* Slight shrink on click */
+    }
+  </style>
+</html>

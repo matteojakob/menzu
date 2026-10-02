@@ -1,0 +1,37 @@
+#sectionOrdersSum {
+  margin: 0 20vw;
+  margin-bottom: 10vh;
+}
+
+.form-title-o {
+  text-align: center !important;
+  font-size: 2rem !important;
+  color: #e73d0c !important;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+}
+
+#order-summary {
+  border: 0 !important;
+}
+
+#basket-items {
+  background-color: rgb(203, 203, 203);
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: inset 5px 5px 10px 2.5px rgba(147, 147, 147, 0.5);
+}
+
+.SummaryOfOrder {
+  border-radius: 10px;
+}
+
+.dropdown {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

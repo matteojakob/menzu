@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="980" height="680" viewBox="0 0 980 680">
+  <defs>
+    <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EDEDED"/>
+    </linearGradient>
+    <filter id="a" width="113.3%" height="120%" x="-6.7%" y="-10%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2.5" result="shadowSpreadOuter1"/>
+      <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="17.5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+    </filter>
+    <rect id="b" width="900" height="600" x="0" y="0" rx="80"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(40 40)">
+      <use xlink:href="#b" fill="#000" filter="url(#a)"/>
+      <use xlink:href="#b" fill="url(#c)"/>
+    </g>
+    <path fill="#000" fill-rule="nonzero" d="M589.104 93.593c12.812-7.397 29.193-3.007 36.59 9.804 84.53 146.41 84.53 326.796 0 473.206-7.397 12.811-23.778 17.2-36.59 9.804-12.81-7.397-17.2-23.778-9.804-36.59 74.961-129.835 74.961-289.799 0-419.635-7.396-12.81-3.007-29.192 9.804-36.589Zm-98.212 49.106c12.811-7.396 29.193-3.007 36.59 9.804 66.985 116.024 66.985 258.97 0 374.994-7.397 12.81-23.779 17.2-36.59 9.804-12.811-7.397-17.2-23.778-9.804-36.59 57.416-99.448 57.416-221.974 0-321.422-7.397-12.812-3.007-29.193 9.804-36.59Zm-93.642 45.028c12.845-7.338 29.206-2.874 36.544 9.971 49.68 86.963 49.68 194.07 0 281.033-7.338 12.845-23.7 17.309-36.544 9.97-12.845-7.337-17.31-23.698-9.971-36.543 40.272-70.497 40.272-157.39 0-227.887-7.338-12.845-2.874-29.206 9.97-36.544Zm-95.228 49.57c12.342-8.155 28.958-4.761 37.113 7.581 38.41 58.13 38.41 132.113 0 190.244-8.155 12.342-24.771 15.736-37.113 7.581-12.342-8.155-15.737-24.771-7.582-37.113 26.576-40.221 26.576-90.959 0-131.18-8.155-12.342-4.76-28.958 7.582-37.113Z"/>
+  </g>
+</svg>
